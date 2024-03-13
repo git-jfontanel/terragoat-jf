@@ -29,10 +29,12 @@ EOF
     git_repo             = "terragoat"
     yor_trace            = "347af3cd-4f70-4632-aca3-4d5e30ffc0b6"
   })
+  metadata_options {
+    http_tokens = "required"
+  }
+  monitoring = true
 }
 
-resource "aws_ebs_volume" "web_host_storage" {
-  # unencrypted volume
   availability_zone = "${var.region}a"
   #encrypted         = false  # Setting this causes the volume to be recreated on apply 
   size = 1
