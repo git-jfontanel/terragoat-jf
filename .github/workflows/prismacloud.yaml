@@ -6,7 +6,6 @@ on:
 jobs:
   approved:
     if: github.event.review.state == 'APPROVED'
-  scan:
     runs-on: ubuntu-latest
     strategy:
       matrix:
