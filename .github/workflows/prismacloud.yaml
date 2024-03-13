@@ -1,11 +1,12 @@
 name: prismacloud
 on:
-  pull_request_review:
-    types: [submitted]
-
+  pull_request:
+    types:
+      - closed
+    
 jobs:
-  approved:
-    if: github.event.review.state == 'APPROVED'
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     strategy:
       matrix:
