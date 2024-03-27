@@ -26,6 +26,7 @@ jobs:
           directory: '.'
           soft_fail: true
           api-key: ${{ secrets.BC_API_KEY }}
+          skip_framework: terraform
       - name: Expose report
         uses: actions/upload-artifact@v3
         with:
