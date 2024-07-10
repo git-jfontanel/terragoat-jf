@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@master
 
-        - name: Run Prisma Cloud action
+      - name: Run Prisma Cloud action
         id: Checkov
         uses: bridgecrewio/checkov-action@master
         with:
@@ -30,7 +30,7 @@ jobs:
           output_format: cli,sarif
           output_file_path: console,results.sarif
 
-          - name: Upload SARIF file
+      - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         if: success() || failure()
         with:
